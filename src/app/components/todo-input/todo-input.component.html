@@ -1,0 +1,22 @@
+<form style="margin-bottom:50px" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <label>
+      <input [(ngModel)]="todoText" name="todoText" value="" matInput placeholder="Ex. Pizza">
+    </label>
+  </mat-form-field>
+
+  <button  class="is-pulled-right" (click)="addTodo() " [disabled]="!todoText" mat-stroked-button color="primary" >Dodaj</button>
+  <button  (click)="testTodo()"  mat-stroked-button color="accent" >Wczytaj testową bazę</button>
+</form>
+
+
+<div  *ngFor="let item of todoArray; index as index">
+  <mat-card-content>
+    <p>
+      <button class="button-margin"  (click)="removeTodo(index)" mat-stroked-button color="primary">Usuń</button>
+      <button class="button-margin"  (click)="openModal(item.id, index)" mat-stroked-button color="accent">Edytuj</button>
+      {{item.text}}
+    </p>
+  </mat-card-content>
+</div>
