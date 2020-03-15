@@ -29,6 +29,7 @@ export class TodoService {
     this.nextId++;
   }
 
+
   getTodos() {
     const localStorageItem = JSON.parse(localStorage.getItem('todos'));
     return localStorageItem == null ? [] : localStorageItem.todos;
